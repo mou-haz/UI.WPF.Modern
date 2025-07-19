@@ -2673,7 +2673,7 @@
                         BorderBrush="{TemplateBinding chelper:FocusVisualHelper.FocusVisualPrimaryBrush}"
                         BorderThickness="{TemplateBinding chelper:FocusVisualHelper.FocusVisualPrimaryThickness}"
                         SnapsToDevicePixels="True"
-                        CornerRadius="{TemplateBinding chelper:ControlHelper.CornerRadius}">
+                        CornerRadius="{TemplateBinding chelper:FocusVisualHelper.FocusVisualPrimaryCornerRadius}">
                         <Border CornerRadius="{TemplateBinding chelper:ControlHelper.CornerRadius}"
                                 BorderBrush="{TemplateBinding chelper:FocusVisualHelper.FocusVisualSecondaryBrush}" 
                                 BorderThickness="{TemplateBinding chelper:FocusVisualHelper.FocusVisualSecondaryThickness}" />
