@@ -33,7 +33,6 @@
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
                         CornerRadius="{TemplateBinding chelper:ControlHelper.CornerRadius}"
-                        chelper:FocusVisualHelper.IsTemplateFocusTarget="True"
                         SnapsToDevicePixels="True">
                         <Border
                             x:Name="Border"
