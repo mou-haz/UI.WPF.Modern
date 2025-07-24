@@ -10,6 +10,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
 using System.Windows.Media;
+using iNKORE.UI.WPF.Helpers;
 
 namespace iNKORE.UI.WPF.Modern.Controls.Helpers
 {
@@ -407,7 +408,7 @@ namespace iNKORE.UI.WPF.Modern.Controls.Helpers
             {
                 HideFocusVisual();
 
-                AdornerLayer adornerlayer = AdornerLayer.GetAdornerLayer(target);
+                AdornerLayer adornerlayer = GetAdornerLayer(target);
                 if (adornerlayer == null)
                     return;
 
@@ -426,6 +427,17 @@ namespace iNKORE.UI.WPF.Modern.Controls.Helpers
                     // Hide the focus visual when IsVisible changes to avoid an internal WPF exception
                     control.IsVisibleChanged += OnControlIsVisibleChanged;
                 }
+            }
+
+            static AdornerLayer? GetAdornerLayer(FrameworkElement element)
+            {
+                var scrollPresenter = element.FindAscendant<ScrollContentPresenter>();
+                if (scrollPresenter?.Parent is AdornerDecorator adornerDecorator)
+                {
+                    return adornerDecorator.AdornerLayer;
+                }
+
+                return AdornerLayer.GetAdornerLayer(element);
             }
 
             static void OnControlIsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)

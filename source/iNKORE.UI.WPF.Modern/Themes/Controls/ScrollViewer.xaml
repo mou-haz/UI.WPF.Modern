@@ -44,18 +44,21 @@
                                 <RowDefinition Height="*" />
                                 <RowDefinition Height="Auto" />
                             </Grid.RowDefinitions>
-                            <ScrollContentPresenter
-                                x:Name="PART_ScrollContentPresenter"
-                                Grid.Row="0"
-                                Grid.RowSpan="2"
-                                Grid.Column="0"
-                                Grid.ColumnSpan="2"
-                                Margin="{TemplateBinding Padding}"
-                                CanContentScroll="{TemplateBinding CanContentScroll}"
-                                CanHorizontallyScroll="False"
-                                CanVerticallyScroll="False"
-                                Content="{TemplateBinding Content}"
-                                ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            
+                            <AdornerDecorator Grid.Row="0"
+                                              Grid.RowSpan="2"
+                                              Grid.Column="0"
+                                              Grid.ColumnSpan="2">
+                                <ScrollContentPresenter
+                                    x:Name="PART_ScrollContentPresenter"
+                                    Margin="{TemplateBinding Padding}"
+                                    CanContentScroll="{TemplateBinding CanContentScroll}"
+                                    CanHorizontallyScroll="False"
+                                    CanVerticallyScroll="False"
+                                    Content="{TemplateBinding Content}"
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" />
+                            </AdornerDecorator>
+                            
                             <ScrollBar
                                 x:Name="PART_VerticalScrollBar"
                                 Grid.Row="0"
