@@ -81,7 +81,7 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
-                    <Grid chelper:FocusVisualHelper.IsTemplateFocusTarget="True">
+                    <Grid>
                         <local:ElevationBorder
                             x:Name="Background"
                             Background="{TemplateBinding Background}"

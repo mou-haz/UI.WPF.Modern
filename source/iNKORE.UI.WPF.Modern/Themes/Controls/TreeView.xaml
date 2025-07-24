@@ -54,6 +54,9 @@
                             <RowDefinition />
                         </Grid.RowDefinitions>
                         <Border
+                            chelper:FocusVisualHelper.IsTemplateFocusTarget="True" 
+                            CornerRadius="{TemplateBinding chelper:ControlHelper.CornerRadius}">
+                            <Border
                             x:Name="ContentPresenterGrid"
                             Margin="{DynamicResource TreeViewItemPresenterMargin}"
                             Padding="{DynamicResource TreeViewItemPresenterPadding}"
@@ -62,8 +65,7 @@
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
                             CornerRadius="{TemplateBinding chelper:ControlHelper.CornerRadius}"
-                            SnapsToDevicePixels="true"
-                            chelper:FocusVisualHelper.IsTemplateFocusTarget="True">
+                            SnapsToDevicePixels="true">
                             <Grid>
                                 <Rectangle
                                     x:Name="SelectionIndicator"
@@ -165,6 +167,7 @@
                                     </Grid>
                                 </Border>
                             </Grid>
+                        </Border>
                         </Border>
                         <ItemsPresenter x:Name="ItemsHost" Grid.Row="1" />
                         <VisualStateManager.VisualStateGroups>
